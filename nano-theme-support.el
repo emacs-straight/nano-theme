@@ -1,10 +1,10 @@
 ;;; nano-theme-support.el --- N Λ N O theme -*- lexical-binding: t -*-
 
-;; Copyright (C) 2021 Free Software Foundation, Inc.
+;; Copyright (C) 2021,2022 Free Software Foundation, Inc.
 
 ;; Maintainer: Nicolas P. Rougier <Nicolas.Rougier@inria.fr>
 ;; URL: https://github.com/rougier/nano-theme
-;; Version: 0.3.1
+;; Version: 0.3.2
 ;; Package-Requires: ((emacs "27.1"))
 ;; Keywords: theme, dark, light
 
@@ -97,6 +97,7 @@
 ;; Version 0.3.2
 ;; - Fix magit diff whitespace
 ;; - Update mu4e faces (1.8.x release)
+;; - Added rounded corners for emacs-plus@29
 
 ;; Version 0.3.1
 ;; - Modified vertico and org modes
@@ -408,6 +409,7 @@ background color that is barely perceptible."
                  '(internal-border-width . 24)
                  '(left-fringe . 0)
                  '(right-fringe . 0)
+                 '(undecorated-round . t) ;; emacs-plu@29 only
                  '(tool-bar-lines . 0)
                  '(menu-bar-lines . 0))))
 

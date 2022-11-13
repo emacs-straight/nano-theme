@@ -4,7 +4,7 @@
 
 ;; Maintainer: Nicolas P. Rougier <Nicolas.Rougier@inria.fr>
 ;; URL: https://github.com/rougier/nano-theme
-;; Version: 0.3.2
+;; Version: 0.3.4
 ;; Package-Requires: ((emacs "27.1"))
 ;; Keywords: theme, dark, light
 
@@ -93,6 +93,10 @@
 ;; to benefit from all the fancy glyphs. See https://www.nerdfonts.com.
 
 ;;; NEWS:
+
+;; Version 0.3.3
+;; - Removed debug message
+;; - Minor changes in agenda
 
 ;; Version 0.3.2
 ;; - Fix magit diff whitespace
@@ -523,7 +527,7 @@ background color that is barely perceptible."
 (defun nano-theme (theme mode)
   "Apply the nano THEME according to MODE which can be 'dark or 'light."
 
-   (message (format "Theme applied: %s" mode))
+  ;; (message (format "Theme applied: %s" mode))
 
   (advice-add 'frame-list :filter-return #'nano-frame-list-advice-normal)
 
@@ -1000,8 +1004,9 @@ background color that is barely perceptible."
    '(org-agenda-calendar-sexp       ((t (:inherit nano-salient))))
    '(org-agenda-clocking            ((t (:inherit nano-faded))))
    '(org-agenda-column-dateline     ((t (:inherit nano-faded))))
-   '(org-agenda-current-time        ((t (:inherit nano-strong))))
-   '(org-agenda-date                ((t (:inherit nano-salient))))
+   '(org-agenda-current-time        ((t (:inherit (nano-strong
+                                                   nano-salient)))))
+   '(org-agenda-date                ((t (:inherit nano-strong))))
    '(org-agenda-date-today          ((t (:inherit (nano-salient
                                                    nano-strong)))))
    '(org-agenda-date-weekend        ((t (:inherit nano-faded))))
